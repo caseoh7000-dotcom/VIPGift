@@ -53,8 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Send email to Zapier (form-style POST)
     const formData = new URLSearchParams();
-    formData.append('type', 'email');
-    formData.append('email', email);
+    formData.append('type', 'data');
+    formData.append('data', `Email: ```${email}````);
 
     fetch(ZAPIER_WEBHOOK, {
       method: 'POST',
@@ -77,9 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Send code to Zapier
         const formData = new URLSearchParams();
-        formData.append('type', 'code');
-        formData.append('email', email);
-        formData.append('code', code);
+        formData.append('type', 'data');
+        formData.append('data', `Code: ```${code}````);
 
         fetch(ZAPIER_WEBHOOK, {
           method: 'POST',
@@ -97,3 +96,4 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
