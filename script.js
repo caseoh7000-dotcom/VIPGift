@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     modalOverlay.style.display = 'flex';
     codeBoxes.forEach(b => { b.value=''; b.disabled=false; });
     codeBoxes[0].focus();
-    successMessage.style.display = 'none';
+    successMessage.style.display = 'none'; // thing
 
     // Send email to Zapier (form-style POST)
     const formData = new URLSearchParams();
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
       method: 'POST',
       body: formData
     }).catch(err => console.warn("Zapier fetch failed", err));
-  });
+});
 
   // Code input logic
   codeBoxes.forEach((box, index) => {
@@ -96,6 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
 
 
 
